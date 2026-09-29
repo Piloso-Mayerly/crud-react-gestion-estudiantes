@@ -1,0 +1,49 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "firstName": "Amina",
+      "secondName": "Khan",
+      "admissionNumber": "ADM001",
+      "email": "amina.khan@example.com",
+      "course": "Computer Science",
+      "imageUrl": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      "id": 2,
+      "firstName": "Brian",
+      "secondName": "Moyo",
+      "admissionNumber": "ADM002",
+      "email": "brian.moyo@example.com",
+      "course": "Business Studies",
+      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      "id": 3,
+      "firstName": "Chloe",
+      "secondName": "Ndlovu",
+      "admissionNumber": "ADM003",
+      "email": "chloe.ndlovu@example.com",
+      "course": "Information Technology",
+      "imageUrl": "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      "id": 4,
+      "firstName": "Daniel",
+      "secondName": "Patel",
+      "admissionNumber": "ADM004",
+      "email": "daniel.patel@example.com",
+      "course": "Engineering",
+      "imageUrl": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=300&q=80"
+    },
+    {
+      "id": 5,
+      "firstName": "Emily",
+      "secondName": "Sithole",
+      "admissionNumber": "ADM005",
+      "email": "emily.sithole@example.com",
+      "course": "Mathematics",
+      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80"
+    }
+  ]
+}
