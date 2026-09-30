@@ -12,13 +12,20 @@ function StudentsList() {
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase()
-    if (!q) return students
-    return students.filter((s) =>
-      [s.firstName, s.secondName, s.admissionNumber, s.email, s.course]
-        .join(' ')
-        .toLowerCase()
-        .includes(q),
-    )
+    const matches = !q
+      ? students
+      : students.filter((s) =>
+          [s.firstName, s.secondName, s.admissionNumber, s.email, s.course]
+            .join(' ')
+            .toLowerCase()
+            .includes(q),
+        )
+
+    return [...matches].sort((a, b) => {
+      const nameA = `${a.firstName || ''} ${a.secondName || ''}`.trim().toLowerCase()
+      const nameB = `${b.firstName || ''} ${b.secondName || ''}`.trim().toLowerCase()
+      return nameA.localeCompare(nameB)
+    })
   }, [students, query])
 
   const handleConfirmDelete = async () => {
