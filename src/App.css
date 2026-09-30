@@ -64,6 +64,40 @@
 
 .subtitle { color: #64748b; margin-bottom: 1rem; }
 
+.edit-avatar-container {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.edit-avatar-preview {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2563eb;
+}
+
+.edit-avatar-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-avatar-info strong {
+  font-size: 0.95rem;
+  color: #1e293b;
+}
+
+.edit-avatar-info span {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
