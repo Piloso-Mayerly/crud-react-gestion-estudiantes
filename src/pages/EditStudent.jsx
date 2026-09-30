@@ -26,7 +26,17 @@ function EditStudent() {
     setSaving(true)
     setStatus('Updating student...')
     try {
-      await updateStudent(id, formData)
+      const sanitizedData = {
+        ...formData,
+        firstName: formData.firstName.trim(),
+        secondName: formData.secondName.trim(),
+        admissionNumber: formData.admissionNumber.trim(),
+        email: formData.email.trim(),
+        course: formData.course.trim(),
+        imageUrl: formData.imageUrl.trim(),
+        updatedAt: new Date().toISOString()
+      }
+      await updateStudent(id, sanitizedData)
       setStatus('Updated!')
       navigate('/students')
     } catch (err) {
@@ -43,6 +53,23 @@ function EditStudent() {
     <form className="card" onSubmit={handleSubmit}>
       <h2>Edit Student</h2>
       <p className="subtitle">Update the learner's details and save your changes.</p>
+
+      <div className="edit-avatar-container">
+        <img
+          className="edit-avatar-preview"
+          src={formData.imageUrl || ''}
+          alt={`${formData.firstName} ${formData.secondName}`}
+          onError={(e) => {
+            e.currentTarget.src =
+              'https://ui-avatars.com/api/?background=2563eb&color=fff&name=' +
+              encodeURIComponent(`${formData.firstName || 'Student'} ${formData.secondName || ''}`)
+          }}
+        />
+        <div className="edit-avatar-info">
+          <strong>Previsualización de estudiante</strong>
+          <span>{formData.firstName || ''} {formData.secondName || ''} &bull; {formData.course || 'Sin curso'}</span>
+        </div>
+      </div>
 
       <div className="grid">
         <label>

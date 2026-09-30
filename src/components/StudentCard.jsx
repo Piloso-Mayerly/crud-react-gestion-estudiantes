@@ -14,7 +14,10 @@ function StudentCard({ student, onDelete }) {
         }}
       />
       <div className="student-info">
-        <h3>{student.firstName} {student.secondName}</h3>
+        <div className="student-header">
+          <h3>{student.firstName} {student.secondName}</h3>
+          <span className="badge-id">ID #{student.id}</span>
+        </div>
         <p><strong>Admission:</strong> {student.admissionNumber}</p>
         <p><strong>Email:</strong> {student.email}</p>
         <p><strong>Course:</strong> {student.course}</p>
