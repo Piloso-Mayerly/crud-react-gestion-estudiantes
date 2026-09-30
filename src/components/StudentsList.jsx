@@ -22,6 +22,7 @@ function StudentsList() {
   }, [students, query])
 
   const handleConfirmDelete = async () => {
+    if (!toDelete) return
     try {
       await deleteStudent(toDelete.id)
       setToDelete(null)
