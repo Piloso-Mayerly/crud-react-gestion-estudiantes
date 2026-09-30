@@ -45,7 +45,12 @@ function StudentsList() {
   return (
     <div className="card">
       <div className="list-header">
-        <h2>Registered Students</h2>
+        <div className="list-title-group">
+          <h2>Registered Students</h2>
+          <span className="records-badge">
+            {filtered.length} {filtered.length === 1 ? 'registro' : 'registros'}
+          </span>
+        </div>
         <input
           className="search"
           placeholder="Search by name, admission, course..."
