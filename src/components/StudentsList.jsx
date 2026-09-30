@@ -27,6 +27,7 @@ function StudentsList() {
       await deleteStudent(toDelete.id)
       setToDelete(null)
       reload()
+      alert('Estudiante eliminado correctamente')
     } catch (err) {
       alert(err.message)
     }
