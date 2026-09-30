@@ -24,6 +24,12 @@ function AddStudentForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
+    
+    if (Object.values(formData).some(value => typeof value === 'string' && value.trim() === '')) {
+      setStatus('Todos los campos son requeridos.')
+      return
+    }
+
     setSaving(true)
     setStatus('Saving student...')
 
