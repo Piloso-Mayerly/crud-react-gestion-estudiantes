@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useState } from 'react'
+
 import { fetchStudents } from '../api/students'
 
 // Custom hook: fetches students and exposes reload + state
+
 export default function useStudents() {
   const [students, setStudents] = useState([])
   const [loading, setLoading] = useState(true)
@@ -10,6 +12,7 @@ export default function useStudents() {
   const load = useCallback(async () => {
     setLoading(true)
     setError(null)
+
     try {
       const data = await fetchStudents()
       setStudents(data)
@@ -21,8 +24,35 @@ export default function useStudents() {
   }, [])
 
   useEffect(() => {
-    load()
-  }, [load])
+    let ignore = false
 
-  return { students, loading, error, reload: load, setStudents }
+    fetchStudents()
+      .then((data) => {
+        if (!ignore) {
+          setStudents(data)
+        }
+      })
+      .catch((err) => {
+        if (!ignore) {
+          setError(err.message)
+        }
+      })
+      .finally(() => {
+        if (!ignore) {
+          setLoading(false)
+        }
+      })
+
+    return () => {
+      ignore = true
+    }
+  }, [])
+
+  return {
+    students,
+    loading,
+    error,
+    reload: load,
+    setStudents,
+  }
 }
