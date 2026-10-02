@@ -2,9 +2,9 @@
  
 ## [1.0.0] - 2026-09-30
 ### Mejorado
-- [Validación de campos obligatorios en el formulario de creación.]
-- [Listado y edición de estudiantes.]
-- [Confirmación antes de eliminar un estudiante.]
+- Validación de campos obligatorios en el formulario de creación.
+- Listado y edición de estudiantes.
+- Confirmación antes de eliminar un estudiante.
  
 ### Corregido
 - Orden de los estudiantes en el listado.
