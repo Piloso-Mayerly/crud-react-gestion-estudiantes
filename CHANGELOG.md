@@ -1,23 +1,21 @@
 # Changelog
-
+ 
 ## [1.0.0] - 2026-09-30
-
-### Agregado
-
-* Formulario de creación de estudiantes.
-* Validación de campos obligatorios al crear estudiantes.
-* Listado de estudiantes.
-* Edición de estudiantes.
-* Confirmación antes de eliminar estudiantes.
-* Pipeline de integración continua con GitHub Actions.
-
+### Mejorado
+- [Validación de campos obligatorios en el formulario de creación.]
+- [Listado y edición de estudiantes.]
+- [Confirmación antes de eliminar un estudiante.]
+ 
 ### Corregido
-
-* Corrección del orden de los estudiantes en el listado.
-* Validación para evitar eliminar estudiantes inexistentes.
-* Corrección del error producido por campos vacíos en el formulario.
-
+- Orden de los estudiantes en el listado.
+- Error al eliminar estudiantes inexistentes.
+- Error por campos vacíos en el formulario.
+- Errores de ESLint (setState dentro de useEffect).
+ 
+### Automatización
+- Pipeline de integración continua con GitHub Actions.
+ 
 ### Documentación
+- Flujo de creación de estudiantes en el README.
+- Instrucciones de instalación y uso en el README.
 
-* Documentación del flujo de creación de estudiantes en el README.
-* Actualización del README con instrucciones de instalación y uso.
