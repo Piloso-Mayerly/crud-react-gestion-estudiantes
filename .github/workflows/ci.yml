@@ -1,0 +1,39 @@
+name: CI - Construcción y validación
+ 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Descargar el código
+        uses: actions/checkout@v4
+ 
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+ 
+      - name: Instalar dependencias
+        run: npm ci
+ 
+      - name: Revisar calidad del código (ESLint)
+        run: npm run lint --if-present
+ 
+      - name: Ejecutar pruebas
+        run: npm test --if-present
+ 
+      - name: Construir el proyecto (Vite)
+        run: npm run build
+ 
+      - name: Guardar el build como artefacto
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-dist
+          path: dist/
