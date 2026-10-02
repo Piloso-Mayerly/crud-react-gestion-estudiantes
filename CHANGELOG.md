@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.1] - 2026-10-02
+## [Sin publicar]
 ### Mejorado
 - Formulario de creación de estudiantes.
 ### Automatización
